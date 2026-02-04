@@ -1,0 +1,1325 @@
+{
+	"info": {
+		"_postman_id": "ba65b9bc-4cf1-43ee-a1fe-341f2b570290",
+		"name": "Constancias Digitales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6115511",
+		"_collection_link": "https://dannos.postman.co/workspace/My-Workspace~67ddf8de-c6de-4ff7-8ddd-540ceff3f4c6/collection/6115511-ba65b9bc-4cf1-43ee-a1fe-341f2b570290?action=share&source=collection_link&creator=6115511"
+	},
+	"item": [
+		{
+			"name": "Administradores",
+			"item": [
+				{
+					"name": "Lista de administradores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/administradores",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"administradores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Administrador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol_id\": 4,\r\n    \"formato_id\": 1,\r\n    \"nombre\": \"demo4\",\r\n    \"apellidos\": \"Dem4\",\r\n    \"usuario\": \"demos4\",\r\n    \"password\": \"12345678\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/administrador/crear",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"administrador",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Administrador",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol_id\": 4,\r\n    \"formato_id\": 1,\r\n    \"nombre\": \"Dannps\",\r\n    \"apellidos\": \"Solanos\",\r\n    \"usuario\": \"dsolanos\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/administrador/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"administrador",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "dc3f67c3-4a20-40fa-9030-540fe4c92974"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Administrador",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/administrador/eliminar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"administrador",
+								"eliminar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "5057ada7-82d6-465f-a0e5-60fb8dae52db"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Licencia de funcionamiento",
+			"item": [
+				{
+					"name": "Agregar Licencia de funcionamiento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_licencia\": \"117110\",\r\n    \"fecha_expedicion\": \"2025-09-11T23:49:42.786Z\",\r\n    \"fecha_impresion\": \"2025-09-08\",\r\n    \"vigencia\": \"2025-11-06\",\r\n    \"numero_expediente\": \"D21d121\",\r\n    \"recibo_pago_certificado\": \"SDSj12323\",\r\n    \"tipo_licencia\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/crear",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de licencias de funcionamiento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/licencias-funcionamiento/:tipo_licencia",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencias-funcionamiento",
+								":tipo_licencia"
+							],
+							"variable": [
+								{
+									"key": "tipo_licencia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Formato Licencia de Funcionamiento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/generar-formato/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"generar-formato",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "9b79760f-2ba5-4a4c-8aee-9422261c2186"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Licencia",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/confirmar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"confirmar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "c7b05ff9-c856-4c9a-a889-4f232230cf2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Licencia",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"propietario_nombre\": \"\",\r\n    \"rfc\": \"\",\r\n    \"numero_patente\": \"\",\r\n    \"giro_comercial\": \"\",\r\n    \"giro_sucundario\": \"\",\r\n    \"tipo_operacion\": \"\",\r\n    \"tipo_zona\": \"\",\r\n    \"horario_operacion\": \"\",\r\n    \"domicilio_fiscal\": \"\",\r\n    \"obeservaciones\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "c7b05ff9-c856-4c9a-a889-4f232230cf2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Licencia",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/detalle/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"detalle",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "c7b05ff9-c856-4c9a-a889-4f232230cf2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dar de Baja / Suspender",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": -2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/licencia-funcionamiento/cambiar-status/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"licencia-funcionamiento",
+								"cambiar-status",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "49407935-7475-4e4a-b6f3-4be3396ed2d1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Predial",
+			"item": [
+				{
+					"name": "Valida Pago Predial",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"folio_pago_predial\": \"G234459\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/predial/valida-pago",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"valida-pago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Predial",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha_oficio\": \"2025-09-06\",\r\n    \"numero_oficio\": \"GDSH-1223\",\r\n    \"recibo_pago_certificado\": \"SDSj12323\",\r\n    \"folio_pago_predial\": \"G137522\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/predial/adjuntar-informacion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"adjuntar-informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de prediales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/prediales",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"prediales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Constancia",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/predial/generar-formato/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"generar-formato",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "92f5392b-aeca-4b4e-a993-8581942458f6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Predial",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/predial/confirmar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"confirmar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "92f5392b-aeca-4b4e-a993-8581942458f6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Predial",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_contribuyente\": \"BANCO DEL BAJIO S.A. I.B.M. / AUSTIN HARRY OUDSHOORN\",\r\n    \"rfc\": \"BBA940707AHO\",\r\n    \"ubicacion\": \"DIAGONAL 80 AVENIDA SUR DEPTO PH-135 , MZA. 310, LTE. 002-139\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/predial/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "92f5392b-aeca-4b4e-a993-8581942458f6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Predial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/predial/detalle/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"predial",
+								"detalle",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "92f5392b-aeca-4b4e-a993-8581942458f6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Obra municipal",
+			"item": [
+				{
+					"name": "Agregar Obra municipal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo_obra_municipal\": \"2\",\r\n    \"folio_recibo_cobro\": \"lkhs-123d2\",\r\n    \"clave_catastral\": \"801001000010002-005\",\r\n    \"giro_secundario\": \"GIRO X\",\r\n    \"bimestre_inicio\": \"1\",\r\n    \"bimestre_fin\": \"6\",\r\n    \"ejercicio\": \"2025\",\r\n    \"fecha_impresion\": \"2025-09-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/obra-municipal/adjuntar-informacion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obra-municipal",
+								"adjuntar-informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Obras Municipales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/obras-municipales/:tipo_obra_municipal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obras-municipales",
+								":tipo_obra_municipal"
+							],
+							"variable": [
+								{
+									"key": "tipo_obra_municipal",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Constancia",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/obra-municipal/generar-formato/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obra-municipal",
+								"generar-formato",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "112a1418-9740-48f8-8cb4-13f4293addb0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Obra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/obra-municipal/confirmar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obra-municipal",
+								"confirmar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "2cb613fb-be66-4dae-9ade-b57ad99fb9a7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Obra municipal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_contribuyente\": \"PROMOTORA XCARET S.A.P.I. DE C.V.\",\r\n    \"domicilio\": \"PREDIO XCARET LOTE 001 , MZA. 012, LTE. 001-\",\r\n    \"numero_padron\": \"147317\",\r\n    \"bimestre_inicio\": \"1\", \r\n    \"bimestre_fin\":  \"6\",\r\n    \"ejercicio\": \"2025\",\r\n    \"giro_secundario\": \"\"  // Opcional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/obra-municipal/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obra-municipal",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "112a1418-9740-48f8-8cb4-13f4293addb0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Obra Municipal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/obra-municipal/detalle/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"obra-municipal",
+								"detalle",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "112a1418-9740-48f8-8cb4-13f4293addb0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dictamen",
+			"item": [
+				{
+					"name": "Agregar Dictamen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha_oficio\": \"2025-12-22\",\r\n    \"numero_oficio\": \"4\",\r\n    \"pase_caja\": \"52-1-321\",\r\n    \"numero_licencia\": \"1625\",\r\n    \"actividad\": \"Comercio\",\r\n    \"numero_expediente\": \"d2q3d2d2\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dictamen/adjuntar-informacion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"adjuntar-informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Dictamenes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha_oficio\": \"2025-09-10\",\r\n    \"numero_oficio\": \"DSA-1231d\",\r\n    \"vigencia\": \"2025-12-31\",\r\n    \"recibo_pago_certificado\": \"GSd1d1\",\r\n    \"numero_licencia\": \"1524\",\r\n    \"sucursal\": \"SEPA LA WWEA\",\r\n    \"actividad\": \"Comercio\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/dictamenes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Dictamen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/dictamen/generar-formato/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"generar-formato",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "696e00a2-3e1d-4a0a-aad1-bb1c75967e71"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Dictamen",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/dictamen/confirmar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"confirmar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "193bc1c1-4010-4160-942c-bf42f4c7ea83"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Dictamen",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_comercial\": \"\",\r\n    \"razon_social\": \"\",\r\n    \"giro\": \"\",\r\n    \"direccion\": \"\",\r\n    \"rfc\": \"\",\r\n    \"sucursal\": \"\",\r\n    \"actividad\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dictamen/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "193bc1c1-4010-4160-942c-bf42f4c7ea83"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Dictamen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/dictamen/detalle/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"detalle",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "193bc1c1-4010-4160-942c-bf42f4c7ea83"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dar de Baja / Suspender",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": -2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dictamen/cambiar-status/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dictamen",
+								"cambiar-status",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "696e00a2-3e1d-4a0a-aad1-bb1c75967e71"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Constancias Transitorias",
+			"item": [
+				{
+					"name": "Agregar Constancia Transitoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_autorizacion\": \"fasdfas212\",\r\n    \"fecha_expedicion\": \"2025-09-30\",\r\n    \"vigencia\": \"2025-12-31\",\r\n    \"nombre_comercial\": \"ABARROTES LULU\",\r\n    \"giro_comercial\": \"COMERCIO LOCAL\",\r\n    // \"numero_licencia\": \"117110\",\r\n    \"predio_id\": \"130\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/transitoria/adjuntar-informacion",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitoria",
+								"adjuntar-informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Constancias Transitorias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/transitorias",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Formato Constancia Transitoria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/transitoria/generar-formato/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitoria",
+								"generar-formato",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "18e555ef-4833-4318-b385-416c2106c092"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar Constancia Transitoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/transitoria/confirmar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitoria",
+								"confirmar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "d40783aa-3ab6-41c2-b260-a26a10811c79"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Constancia Transitoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"giro_comercial\": \"\",\r\n    \"nombre_comercial\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/transitoria/editar/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitoria",
+								"editar",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "18e555ef-4833-4318-b385-416c2106c092"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalle Constancia Transitoria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/transitoria/detalle/:uuid",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transitoria",
+								"detalle",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "18e555ef-4833-4318-b385-416c2106c092"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Login Administrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"supervisorLicencias\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/session/administrador",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"session",
+								"administrador"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/roles",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Formatos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/formatos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      //"locale": "es",
+      "module": "commonjs",
+      "pretty": true,
+      "sourceMap": true,
+      "target": "es6",
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "esModuleInterop": true
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  
